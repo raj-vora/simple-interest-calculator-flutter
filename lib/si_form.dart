@@ -11,7 +11,7 @@ class _SIFormState extends State<SIForm> {
 
   @override
   Widget build(BuildContext context) {
-    
+    TextStyle textStyle = Theme.of(context).textTheme.title;
     return Container(
       margin: EdgeInsets.all(10.0),
       child: ListView(
@@ -61,14 +61,22 @@ class _SIFormState extends State<SIForm> {
               children: <Widget>[
                 Expanded(
                   child: RaisedButton(
-                    child: Text('Calculate'),
-                    onPressed: (){},
+                    color: Theme.of(context).accentColor,
+                    textColor: Theme.of(context).primaryColorDark,
+                    child: Text('Calculate', textScaleFactor: 1.5,),
+                    onPressed: (){
+                        
+                    },
                   ),
                 ),
                 Expanded(
                   child: RaisedButton(
-                    child: Text('Reset'),
-                    onPressed: (){},
+                    color: Theme.of(context).primaryColorDark,
+                    textColor: Theme.of(context).primaryColorLight,
+                    child: Text('Reset', textScaleFactor: 1.5,),
+                    onPressed: (){
+                      
+                    },
                   ),
                 )
               ],
@@ -78,6 +86,7 @@ class _SIFormState extends State<SIForm> {
             padding: EdgeInsets.all(10.0),
             child: Text(
               'Idhar result aayega', 
+              style: textStyle,
             ),
           ),
         ],
@@ -93,12 +102,15 @@ class InputTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.title;
     return Padding(
       padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: TextField(
         keyboardType: TextInputType.number,
+        style: textStyle,
         decoration: InputDecoration(
           labelText: label,
+          labelStyle: textStyle,
           hintText: hint,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),

@@ -9,6 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Simple Interest Calculator',
+      theme: ThemeData(
+        primaryColor: Colors.indigo,
+        accentColor: Colors.indigoAccent,
+        brightness: Brightness.dark,
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Simple Interest Calculator'),
